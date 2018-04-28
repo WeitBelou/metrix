@@ -5,4 +5,4 @@ WORKDIR /app
 
 ADD . .
 
-ENTRYPOINT ["/app/metrixpp.sh"]
+ENTRYPOINT ./metrixpp.sh
