@@ -4,5 +4,3 @@ RUN mkdir /app
 WORKDIR /app
 
 ADD . .
-
-ENTRYPOINT ./metrixpp.sh
