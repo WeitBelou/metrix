@@ -24,6 +24,8 @@ if [ ! -e ${REPO} ]; then
     exit -1
 fi
 
+cd ${REPO}
+
 python ${METRIX_BIN} collect ${METRICS}
 
 python ${METRIX_BIN} export --db-file=${DB_FILE} > ${CSV_FILE}
