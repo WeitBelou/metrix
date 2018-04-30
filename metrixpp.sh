@@ -17,13 +17,13 @@ fix_permissions() {
 trap fix_permissions INT TERM EXIT
 
 REPO="/app/repo"
-METRIX_BIN="python /app/metrix++"
+METRIX_BIN="/app/metrix++.py"
 
 if [ ! -e ${REPO} ]; then
     echo Repo not found in ${REPO}
     exit -1
 fi
 
-${METRIX_BIN} collect ${METRICS}
+python ${METRIX_BIN} collect ${METRICS}
 
-${METRIX_BIN} export --db-file=${DB_FILE} > ${CSV_FILE}
+python ${METRIX_BIN} export --db-file=${DB_FILE} > ${CSV_FILE}
